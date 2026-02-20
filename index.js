@@ -277,3 +277,4 @@ app.listen(CONFIG.PORT, () => {
   ╚════════════════════════════════════════════════════════╝
   `);
 });
+Fix: Modelo Gemini corregido a gemini-1.5-flash y validación de PHONE_NUMBER_ID
