@@ -121,7 +121,19 @@ async function sendWhatsAppMessage(to, message) {
 app.get('/health', (req, res) => {
     res.json({ status: 'OK', agent: 'Harry', time: new Date().toISOString() });
 });
-
+// Página de privacidad requerida por Meta
+app.get('/privacy.html', (req, res) => {
+    res.send(`
+        <!DOCTYPE html>
+        <html>
+        <head><title>Privacy Policy</title></head>
+        <body>
+            <h1>Privacy Policy</h1>
+            <p>This app processes WhatsApp messages via Meta API. No personal data is stored.</p>
+        </body>
+        </html>
+    `);
+});
 app.listen(PORT, () => {
     console.log(`🚀 Harry operativo en puerto ${PORT}`);
 });
