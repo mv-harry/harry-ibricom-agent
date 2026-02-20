@@ -121,6 +121,7 @@ async function sendWhatsAppMessage(to, message) {
 app.get('/health', (req, res) => {
     res.json({ status: 'OK', agent: 'Harry', time: new Date().toISOString() });
 });
+
 // Página de privacidad requerida por Meta
 app.get('/privacy.html', (req, res) => {
     res.send(`
@@ -134,6 +135,21 @@ app.get('/privacy.html', (req, res) => {
         </html>
     `);
 });
+
+// Página de términos requerida por Meta
+app.get('/terms.html', (req, res) => {
+    res.send(`
+        <!DOCTYPE html>
+        <html>
+        <head><title>Terms of Service</title></head>
+        <body>
+            <h1>Terms of Service</h1>
+            <p>By using this service, you agree to WhatsApp Business API terms.</p>
+        </body>
+        </html>
+    `);
+});
+
 app.listen(PORT, () => {
     console.log(`🚀 Harry operativo en puerto ${PORT}`);
 });
